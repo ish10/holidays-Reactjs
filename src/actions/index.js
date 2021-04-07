@@ -10,6 +10,11 @@ export const signIn =(email,password)=>{
     };
 };
 
+export const signOut=()=>{
+
+    return{type:'SIGN_OUT'};
+};
+
 export const GetList=()=>{
     return async(dispatch,getState)=>{
         const { userId } = getState().auth;
@@ -20,5 +25,16 @@ export const GetList=()=>{
         });
     console.log(response.data.data.tours);
     dispatch({type:'GET_LIST',payload:response.data});
+    };
+};
+
+export const GetTour=(id)=>{
+
+    return async(dispatch,getState)=>{
+        const response = await axios.get(`http://127.0.0.1:4000/api/v1/tours/${id}`);
+        
+        dispatch({type:'GET_TOUR',payload:response.data});
+
+
     };
 };

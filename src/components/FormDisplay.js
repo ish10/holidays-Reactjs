@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {connect} from 'react-redux';
 import {signIn} from '../actions';
-import { Button, Checkbox, Form,Grid} from 'semantic-ui-react'
+import { Button, Checkbox, Form,Grid} from 'semantic-ui-react';
 
 
 
@@ -21,7 +21,7 @@ props.signIn(term,Password);
  }
   
 return(
-    <Form>
+    <Form  className ='ui Form'>
       <h3>Login Form</h3>
       <Grid>
     <Grid.Column width={8} stretched verticalAlign="middle">
